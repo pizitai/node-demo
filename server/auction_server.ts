@@ -25,10 +25,10 @@ const products:Product[] = [
 app.get('/',(req,res)=>{
     res.send("hello express");
 })
-app.get('/products',(req,res)=>{
+app.get('/api/products',(req,res)=>{
     res.json(products);
 })
-app.get('/product/:id',(req,res)=>{
+app.get('/api/product/:id',(req,res)=>{
     res.json(products.find((product) =>
         product.id == req.params.id
     ));
