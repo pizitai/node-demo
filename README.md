@@ -1,6 +1,6 @@
-# angular study
+# node study
 
-2017-11-23
+2017-11-29
  
 
 #### How to start this project
@@ -21,6 +21,9 @@ cnpm install express --save
 cnpm install @types/express --save
 npm installl -g nodemon        //监听文件变化
 ```
+branch | 备注
+---- | ----
+test1 | 分支1
 
 
 
