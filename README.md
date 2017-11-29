@@ -23,7 +23,7 @@ npm installl -g nodemon        //监听文件变化
 ```
 branch | 备注
 ---- | ----
-test1 | 分支1
+test1 | websocket
 
 
 
