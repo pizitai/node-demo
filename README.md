@@ -16,14 +16,9 @@ npm start
 - 监控服务器文件的变化
 安装
 ```shell
-cnpm install @types/node --save
-cnpm install express --save
-cnpm install @types/express --save
-npm installl -g nodemon        //监听文件变化
+cnpm install ws --save
+cnpm install @types/ws --save
 ```
-branch | 备注
----- | ----
-test1 | 分支1
 
 
 
