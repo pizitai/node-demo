@@ -1,6 +1,7 @@
 import * as express from 'express';
 import { Server } from 'ws';
 import { setInterval } from 'timers';
+import * as path from 'path';
 const app = express();
 
 export class Product {
@@ -38,11 +39,13 @@ const comments: Comment[] = [
     new Comment(2, 1, '2017-11-23 02:22:22', '李四', 1, '东西差'),
     new Comment(3, 1, '2017-11-25 02:22:22', '王五', 2, '东西挺好'),
     new Comment(4, 2, '2017-11-24 02:22:22', '赵六', 4, '东西很不错'),
-]
+];
 
-app.get('/', (req, res) => {
-    res.send("hello express");
-})
+app.use('/', express.static(path.join(__dirname, "..", 'client')))
+
+// app.get('/', (req, res) => {
+//     res.send("hello express");
+// })
 app.get('/api/products', (req, res) => {
     let result = products;
     let params = req.query;
@@ -104,7 +107,7 @@ setInterval(() => {
                 bid: currentBids.get(pid)
             }))
             ws.send(JSON.stringify(newBids));
-        }else{
+        } else {
             subscriptions.delete(ws);
         }
     })

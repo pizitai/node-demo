@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var ws_1 = require("ws");
 var timers_1 = require("timers");
+var path = require("path");
 var app = express();
 var Product = /** @class */ (function () {
     function Product(id, title, price, rating, desc, categories) {
@@ -42,9 +43,10 @@ var comments = [
     new Comment(3, 1, '2017-11-25 02:22:22', '王五', 2, '东西挺好'),
     new Comment(4, 2, '2017-11-24 02:22:22', '赵六', 4, '东西很不错'),
 ];
-app.get('/', function (req, res) {
-    res.send("hello express");
-});
+app.use('/', express.static(path.join(__dirname, "..", 'client')));
+// app.get('/', (req, res) => {
+//     res.send("hello express");
+// })
 app.get('/api/products', function (req, res) {
     var result = products;
     var params = req.query;
